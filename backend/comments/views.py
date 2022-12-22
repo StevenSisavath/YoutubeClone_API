@@ -38,8 +38,8 @@ def user_comments(request):
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 def user_comments_update(request, pk):
-        comment = get_object_or_404(Comment, pk=pk)
-        serializer = CommentSerializer(comment, data=request.data)
-        serializer.is_valid(raise_exception=True)
-        serializer.save()
-        return Response(serializer.data)
+    comment = get_object_or_404(Comment, pk=pk)
+    serializer = CommentSerializer(comment, data=request.data)
+    serializer.is_valid(raise_exception=True)
+    serializer.save()
+    return Response(serializer.data)

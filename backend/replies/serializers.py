@@ -4,7 +4,7 @@ from .models import Reply
 # <<<<<<<<<<<<<<<<< EXAMPLE FOR STARTER CODE USE <<<<<<<<<<<<<<<<<
 
 
-class CommentSerializer(serializers.ModelSerializer):
+class ReplySerializer(serializers.ModelSerializer):
     class Meta:
         model = Reply
         fields = ['id', 'text', 'comment_id', 'user_id']
