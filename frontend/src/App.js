@@ -13,6 +13,7 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import HomePage2 from "./pages/HomePage/HomePage2";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           path="/"
           element={
             <PrivateRoute>
-              <HomePage />
+              <HomePage2/>
             </PrivateRoute>
           }
         />
