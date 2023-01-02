@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
-
+import SearchBar from "../../components/SearchBar";
 import axios from "axios";
 
 const HomePage = () => {
@@ -12,25 +12,25 @@ const HomePage = () => {
   const [cars, setCars] = useState([]);
   const [videos, setVideos]= useState([]);
   const [relatedVideos, setRelatedVideos]= useState([]);
+  const [search, setSearch] = useState([]);
 
 
-  async function getListOfVideos(){
-    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=gucci&key=AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet`);
+  async function getListOfVideos(search){
+    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}i&key=AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet`);
     setVideos(response.data.items);
-    debugger
     console.log(response.data.items)
   }
 
 
-  async function getRelatedVideos(search){
+  async function getRelatedVideos(){
     let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=OKozUbsKqlo&type=video&key=AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet`);
-    setRelatedVideos(response.data.items);
+    // setRelatedVideos(response.data.items);
     console.log(response.data.items)
   }
 
 
   useEffect(()=>{
-    getListOfVideos(); 
+     
     getRelatedVideos(); 
   },[])
 
@@ -55,6 +55,7 @@ const HomePage = () => {
   return (
     <div className="container">
       <h1>Home Page for {user.username}!</h1>
+      <SearchBar listofvideos={getListOfVideos}/>
 
       
       
