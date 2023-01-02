@@ -23,3 +23,14 @@ const SearchBar = (props) => {
 }
  
 export default SearchBar;
+
+
+
+// async function getRelatedVideos(search){
+//     let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=OKozUbsKqlo&type=video&key=AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet`);
+//     setRelatedVideos(response.data.items);
+//     console.log(relatedVideos)
+//   }
+
+
+//   getRelatedVideos()

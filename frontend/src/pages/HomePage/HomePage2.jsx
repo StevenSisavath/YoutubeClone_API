@@ -10,17 +10,32 @@ const HomePage = () => {
   //TODO: Add an AddCars Page to add a car for a logged in user's garage
   const [user, token] = useAuth();
   const [cars, setCars] = useState([]);
-  const [videos, setVideos]= useState([])
+  const [videos, setVideos]= useState([]);
+  const [relatedVideos, setRelatedVideos]= useState([]);
+
+
+  async function getListOfVideos(){
+    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=gucci&key=AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet`);
+    setVideos(response.data.items);
+    debugger
+    console.log(response.data.items)
+  }
+
+
+  async function getRelatedVideos(search){
+    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=OKozUbsKqlo&type=video&key=AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet`);
+    setRelatedVideos(response.data.items);
+    console.log(response.data.items)
+  }
+
 
   useEffect(()=>{
-    listOfVideos();
+    getListOfVideos(); 
+    getRelatedVideos(); 
   },[])
 
-  async function listOfVideos(search){
-    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=wwe&key=AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet`);
-    setVideos(response.data.items);
-    console.log(videos)
-  }
+
+
 
   useEffect(() => {
     const fetchCars = async () => {
