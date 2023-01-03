@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-
+import HomePage2 from '../pages/HomePage/HomePage2';
 
 const SearchBar = (props) => {
     const[searchInput,setsearchInput]=useState('')
+    const[change, setChange]=useState([])
 
     function videoBySearch(name){
         name.preventDefault();

@@ -7,7 +7,7 @@ import VideoPage from "../../components/VideoPage/VideoPage";
 import Thumbnails from "../../components/Thumbnails/Thumbnails";
 import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 
-const HomePage = () => {
+const HomePage2 = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   //TODO: Add an AddCars Page to add a car for a logged in user's garage
@@ -17,6 +17,7 @@ const HomePage = () => {
   const [relatedVideos, setRelatedVideos]= useState([]);
   const [search, setSearch] = useState([]);
   const [videoId, setVideoId] = useState([])
+  const [playVideo, setPlayVideo]= useState([])
 
 
   async function getListOfVideos(search){
@@ -55,10 +56,15 @@ const HomePage = () => {
     <div className="container">
       <h1>Home Page for {user.username}!</h1>
       <SearchBar listofvideos={getListOfVideos}/>
-      <VideoPlayer videoId={videoId}/>
-      <Thumbnails videos = {videos} setVideoId={setVideoId} videoId={videoId}/>
+      
+      <div onClick={()=>setPlayVideo(!playVideo)}>
+        {playVideo ? <Thumbnails videos = {videos} setVideoId={setVideoId} videoId={videoId}/> : <VideoPlayer videoId={videoId}/>}
+
+        
+      </div>
+      
     </div>
   );
 };
 
-export default HomePage;
+export default HomePage2;
