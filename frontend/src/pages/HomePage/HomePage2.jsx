@@ -3,6 +3,9 @@ import { useEffect, useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import SearchBar from "../../components/SearchBar";
 import axios from "axios";
+import VideoPage from "../../components/VideoPage/VideoPage";
+import Thumbnails from "../../components/Thumbnails/Thumbnails";
+import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 
 const HomePage = () => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -13,22 +16,23 @@ const HomePage = () => {
   const [videos, setVideos]= useState([]);
   const [relatedVideos, setRelatedVideos]= useState([]);
   const [search, setSearch] = useState([]);
+  const [videoId, setVideoId] = useState([])
 
 
   async function getListOfVideos(search){
-    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}i&key=AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet`);
+    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}i&key=AIzaSyARv7t791tTkKdz-d8GL7GhOPswaF7Ytvw&part=snippet`);
     setVideos(response.data.items);
     console.log(response.data.items)
   }
 
   async function getRelatedVideos(){
-    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=OKozUbsKqlo&type=video&key=AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet`);
-    // setRelatedVideos(response.data.items);
+    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=OKozUbsKqlo&type=video&key=AIzaSyARv7t791tTkKdz-d8GL7GhOPswaF7Ytvw&part=snippet`);
+    setRelatedVideos(response.data.items);
     console.log(response.data.items)
   }
 
   useEffect(()=>{
-     
+     getListOfVideos();
     getRelatedVideos(); 
   },[])
 
@@ -51,13 +55,8 @@ const HomePage = () => {
     <div className="container">
       <h1>Home Page for {user.username}!</h1>
       <SearchBar listofvideos={getListOfVideos}/>
-      <iframe id="ytplayer" 
-      type="text/html" 
-      width="640" 
-      height="360"
-      src="https://www.youtube.com/embed/0qcJKQcNc3o?autoplay=1&origin=http://example.com"
-      frameborder="0">
-      </iframe>
+      <VideoPlayer videoId={videoId}/>
+      <Thumbnails videos = {videos} setVideoId={setVideoId} videoId={videoId}/>
     </div>
   );
 };
