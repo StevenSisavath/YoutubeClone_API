@@ -24,6 +24,7 @@ const HomePage2 = () => {
     let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}i&key=AIzaSyARv7t791tTkKdz-d8GL7GhOPswaF7Ytvw&part=snippet`);
     setVideos(response.data.items);
     console.log(response.data.items)
+    setPlayVideo(!playVideo)
   }
 
   async function getRelatedVideos(){
