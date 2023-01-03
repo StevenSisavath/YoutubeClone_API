@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "6e658987-88b1-4e8a-b89e-623ee217709f",
+		"_postman_id": "a117ad16-15ca-4de1-ba8d-8e2f7b20299f",
 		"name": "DRF_JWT_Backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "24341225"
+		"_exporter_id": "24361957"
 	},
 	"item": [
 		{
@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"dantheman\",\r\n    \"password\": \"password1@\",\r\n    \"email\": \"dan@devcodecamp.com\",\r\n    \"first_name\": \"Daniel\",\r\n    \"last_name\": \"Tulpa\"\r\n}",
+							"raw": "{\r\n    \"username\": \"Mike\",\r\n    \"password\": \"flyhigh20\",\r\n    \"email\": \"seanboateng2@gmail.com\",\r\n    \"first_name\": \"Mike\",\r\n    \"last_name\": \"Tyson\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -50,7 +50,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"username\": \"dantheman\",\r\n    \"password\": \"password1@\"\r\n}",
+							"raw": "{\r\n    \"username\": \"Sean\",\r\n    \"password\": \"rootrootroot\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -81,10 +81,16 @@
 					"name": "Refresh_Access",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczNTQ0MTUzLCJpYXQiOjE2NzI2ODAxNTMsImp0aSI6ImJjYTllZDljNTdlYzQ2YmI5ZTQxMTJlNzMyODFiMjZiIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJTZWFuIiwiZmlyc3RfbmFtZSI6IlNlYW4ifQ.9jBbYtF2-rWLWIOs69uifK1XqqOQT0hNA6nhLStlhLA",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY3MzM4NjU5MywiaWF0IjoxNjcxNjU4NTkzLCJqdGkiOiJiNjJhNTViODlmZTg0ZWRjYmJmZWRlMDllY2MxYzgzNCIsInVzZXJfaWQiOjQsInVzZXJuYW1lIjoiZGFudGhlbWFuIiwiZmlyc3RfbmFtZSI6IkRhbmllbCJ9.g_BrxcrJFMAIOdLwlibwn-yW-NJOEZtnWPD-54xz-ks\"\r\n}",
+							"raw": "{\r\n    \"refresh\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczNTQzNDI2LCJpYXQiOjE2NzI2Nzk0MjYsImp0aSI6Ijg3ZDVlNjQ1NzkyMTQzZjRiZmVlNjE5ZDgyMzE3NzVlIiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJNaWtlIiwiZmlyc3RfbmFtZSI6Ik1pa2UifQ.cJy7_MtttqJ1qlgLjXfprzDgTzuca9J51rAHtCVURoU\",",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -152,7 +158,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcyNTIyNTkzLCJpYXQiOjE2NzE2NTg1OTMsImp0aSI6IjQ2MjdlY2MxNmI4YjQ3ZTk4MWY4YTBmZTI3MmY4ZGE1IiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.g2K3qZ2PAI-Zx49lnmtwrgb86eC_O5w_aQ5L91y3XwU",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczNTQ0MTUzLCJpYXQiOjE2NzI2ODAxNTMsImp0aSI6ImJjYTllZDljNTdlYzQ2YmI5ZTQxMTJlNzMyODFiMjZiIiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJTZWFuIiwiZmlyc3RfbmFtZSI6IlNlYW4ifQ.9jBbYtF2-rWLWIOs69uifK1XqqOQT0hNA6nhLStlhLA",
 								"type": "text"
 							}
 						],
@@ -191,13 +197,14 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcyNTIyNTkzLCJpYXQiOjE2NzE2NTg1OTMsImp0aSI6IjQ2MjdlY2MxNmI4YjQ3ZTk4MWY4YTBmZTI3MmY4ZGE1IiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.g2K3qZ2PAI-Zx49lnmtwrgb86eC_O5w_aQ5L91y3XwU",
-								"type": "text"
+								"value": "",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"make\": \"Ford\",\n    \"model\": \"F150\",\n    \"year\": 1999\n}",
+							"raw": "{\n    \"make\": \"Ferarri\",\n    \"model\": \"Truck\",\n    \"year\": 2023\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -450,7 +457,91 @@
 					"name": "GET all replies",
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "YoutubeClone",
+			"item": [
+				{
+					"name": "GetVideos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.googleapis.com/youtube/v3/search?q=wwe&key=\nAIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet",
+							"protocol": "https",
+							"host": [
+								"www",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"youtube",
+								"v3",
+								"search"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "wwe"
+								},
+								{
+									"key": "key",
+									"value": "\nAIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8"
+								},
+								{
+									"key": "part",
+									"value": "snippet"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GetRelatedVideos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://www.googleapis.com/youtube/v3/search?relatedToVideoId=OKozUbsKqlo&type=video&key=AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet",
+							"protocol": "https",
+							"host": [
+								"www",
+								"googleapis",
+								"com"
+							],
+							"path": [
+								"youtube",
+								"v3",
+								"search"
+							],
+							"query": [
+								{
+									"key": "relatedToVideoId",
+									"value": "OKozUbsKqlo"
+								},
+								{
+									"key": "type",
+									"value": "video"
+								},
+								{
+									"key": "key",
+									"value": "AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8"
+								},
+								{
+									"key": "part",
+									"value": "snippet"
+								}
+							]
+						}
 					},
 					"response": []
 				}
