@@ -21,21 +21,16 @@ const HomePage = () => {
     console.log(response.data.items)
   }
 
-
   async function getRelatedVideos(){
     let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=OKozUbsKqlo&type=video&key=AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet`);
     // setRelatedVideos(response.data.items);
     console.log(response.data.items)
   }
 
-
   useEffect(()=>{
      
     getRelatedVideos(); 
   },[])
-
-
-
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -56,9 +51,13 @@ const HomePage = () => {
     <div className="container">
       <h1>Home Page for {user.username}!</h1>
       <SearchBar listofvideos={getListOfVideos}/>
-
-      
-      
+      <iframe id="ytplayer" 
+      type="text/html" 
+      width="640" 
+      height="360"
+      src="https://www.youtube.com/embed/0qcJKQcNc3o?autoplay=1&origin=http://example.com"
+      frameborder="0">
+      </iframe>
     </div>
   );
 };
