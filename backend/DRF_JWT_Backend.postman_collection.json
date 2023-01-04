@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "a117ad16-15ca-4de1-ba8d-8e2f7b20299f",
+		"_postman_id": "e357e4f4-9cd2-46df-937b-1e0bc92cc831",
 		"name": "DRF_JWT_Backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "24361957"
+		"_exporter_id": "24341225"
 	},
 	"item": [
 		{
@@ -475,7 +475,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://www.googleapis.com/youtube/v3/search?q=wwe&key=\nAIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet",
+							"raw": "https://www.googleapis.com/youtube/v3/search?q=wwe&key=\nAIzaSyC_f2CwD1SDLwIfT92jDWAzAu6fgqskjHA&part=snippet",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -494,7 +494,7 @@
 								},
 								{
 									"key": "key",
-									"value": "\nAIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8"
+									"value": "\nAIzaSyC_f2CwD1SDLwIfT92jDWAzAu6fgqskjHA"
 								},
 								{
 									"key": "part",
@@ -511,7 +511,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "https://www.googleapis.com/youtube/v3/search?relatedToVideoId=OKozUbsKqlo&type=video&key=AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8&part=snippet",
+							"raw": "https://www.googleapis.com/youtube/v3/search?relatedToVideoId=OKozUbsKqlo&type=video&key=AIzaSyC_f2CwD1SDLwIfT92jDWAzAu6fgqskjHA&part=snippet",
 							"protocol": "https",
 							"host": [
 								"www",
@@ -534,7 +534,7 @@
 								},
 								{
 									"key": "key",
-									"value": "AIzaSyCF0NtTZCEV3hdiTNPMddm9GqMsdw-f6M8"
+									"value": "AIzaSyC_f2CwD1SDLwIfT92jDWAzAu6fgqskjHA"
 								},
 								{
 									"key": "part",
