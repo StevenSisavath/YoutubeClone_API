@@ -16,7 +16,7 @@ const HomePage2 = () => {
 
 
   async function getListOfVideos(search){
-    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}&key=AIzaSyAvHw-cboU1RCitkpS2LT0DSBhUtujePK0&part=snippet`);
+    let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?q=${search}&key=AIzaSyC_f2CwD1SDLwIfT92jDWAzAu6fgqskjHA&part=snippet`);
     setVideos(response.data.items);
     console.log(response.data.items)
     setPlayVideo(!playVideo)
@@ -30,7 +30,7 @@ const HomePage2 = () => {
     <div className="container">
       <h1>Home Page for {user.username}!</h1>
         <SearchBar listofvideos={getListOfVideos}/>
-      <Thumbnails videos={videos}/>
+        <Thumbnails videos={videos}/>
     </div>
   );
 };

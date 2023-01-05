@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { useLocation, useNavigate } from 'react-router-dom';
+import SearchBar from '../SearchBar/SearchBar';
 
 const VideoPlayer = (props) => {
     const [relatedVideos, setRelatedVideos]= useState([]);
@@ -14,15 +15,16 @@ const VideoPlayer = (props) => {
         }, [])
 
     async function getRelatedVideos(){
-        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${id}&type=video&key=AIzaSyAvHw-cboU1RCitkpS2LT0DSBhUtujePK0&part=snippet`);
+        let response = await axios.get(`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${id}&type=video&key=AIzaSyC_f2CwD1SDLwIfT92jDWAzAu6fgqskjHA&part=snippet`);
         setRelatedVideos(response.data.items);
         console.log(response.data.items)
         }
     
     function handleClick(video){
         console.log(video.id.videoId)
-        setId(video.id.videoId)
         navigate("/videoplayer", { state: {id:video.id.videoId}})
+        setId(video.id.videoId)
+        getRelatedVideos()
     }   
 
     function handleReturnToHomePage(){
@@ -31,12 +33,13 @@ const VideoPlayer = (props) => {
     
     return ( 
         <div>
+            <SearchBar/>
             <div>
                 <iframe id="ytplayer" 
                 type="text/html" 
                 width="640" 
                 height="360"
-                src={`https://www.youtube.com/embed/${location.state.id}?autoplay=1&origin=http://example.com`}
+                src={`https://www.youtube.com/embed/${id}?autoplay=1&origin=http://example.com`}
                 frameBorder="0">
                 </iframe>
             </div>
