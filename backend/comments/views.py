@@ -35,6 +35,23 @@ def user_comments(request):
         serializer = CommentSerializer(comments, many=True)
         return Response(serializer.data)
 
+@api_view(['GET'])
+def video_id_comment(request,cpk):
+    if request.method == 'GET':
+        comments = Comment.objects.filter(video_id=cpk)
+        serializer = CommentSerializer(comments, many=True)
+        return Response(serializer.data)
+
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def create_comment(request,cpk):
+    if request.method == 'POST':
+            serializer = CommentSerializer(data=request.data)
+            serializer.is_valid(raise_exception=True)
+            serializer.save(collection_id=cpk)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+    
+
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 def user_comments_update(request, pk):

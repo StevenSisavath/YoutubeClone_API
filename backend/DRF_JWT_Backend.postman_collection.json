@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "e357e4f4-9cd2-46df-937b-1e0bc92cc831",
+		"_postman_id": "ea8721ff-7111-4dbc-9302-85e73eb5f2eb",
 		"name": "DRF_JWT_Backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "24341225"
+		"_exporter_id": "24361957"
 	},
 	"item": [
 		{
@@ -261,20 +261,27 @@
 					"response": []
 				},
 				{
-					"name": "POST new comment",
+					"name": "POST new comment(protected)",
 					"request": {
 						"auth": {
 							"type": "bearer",
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcyNTIyNTkzLCJpYXQiOjE2NzE2NTg1OTMsImp0aSI6IjQ2MjdlY2MxNmI4YjQ3ZTk4MWY4YTBmZTI3MmY4ZGE1IiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.g2K3qZ2PAI-Zx49lnmtwrgb86eC_O5w_aQ5L91y3XwU",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczODE2Nzc0LCJpYXQiOjE2NzI5NTI3NzQsImp0aSI6IjI1YTYzNjA1OTYyMzQ0ZDViNDdhYjVkYmI5Yjc3NTQ0IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJTZWFuIiwiZmlyc3RfbmFtZSI6IlNlYW4ifQ.GKDc5imfYtrpwet0oUMqVm799YfgozaQXXcv8WEXp-I",
 									"type": "string"
 								}
 							]
 						},
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczODE2Nzc0LCJpYXQiOjE2NzI5NTI3NzQsImp0aSI6IjI1YTYzNjA1OTYyMzQ0ZDViNDdhYjVkYmI5Yjc3NTQ0IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJTZWFuIiwiZmlyc3RfbmFtZSI6IlNlYW4ifQ.GKDc5imfYtrpwet0oUMqVm799YfgozaQXXcv8WEXp-I",
+								"type": "text",
+								"disabled": true
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\r\n    \"video_id\": \"23\",\r\n    \"text\": \"ccc\",\r\n    \"likes\": 2,\r\n    \"dislikes\": 2,\r\n    \"user_id\": 1\r\n}",
@@ -311,7 +318,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjcyNTIyNTkzLCJpYXQiOjE2NzE2NTg1OTMsImp0aSI6IjQ2MjdlY2MxNmI4YjQ3ZTk4MWY4YTBmZTI3MmY4ZGE1IiwidXNlcl9pZCI6NCwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.g2K3qZ2PAI-Zx49lnmtwrgb86eC_O5w_aQ5L91y3XwU",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczODE2Nzc0LCJpYXQiOjE2NzI5NTI3NzQsImp0aSI6IjI1YTYzNjA1OTYyMzQ0ZDViNDdhYjVkYmI5Yjc3NTQ0IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJTZWFuIiwiZmlyc3RfbmFtZSI6IlNlYW4ifQ.GKDc5imfYtrpwet0oUMqVm799YfgozaQXXcv8WEXp-I",
 									"type": "string"
 								}
 							]
@@ -375,6 +382,73 @@
 								"api",
 								"comments",
 								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get_Comments_For_Video",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/jbnddQ9l0IA",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"jbnddQ9l0IA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add_New_Comment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjczODE2Nzc0LCJpYXQiOjE2NzI5NTI3NzQsImp0aSI6IjI1YTYzNjA1OTYyMzQ0ZDViNDdhYjVkYmI5Yjc3NTQ0IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJTZWFuIiwiZmlyc3RfbmFtZSI6IlNlYW4ifQ.GKDc5imfYtrpwet0oUMqVm799YfgozaQXXcv8WEXp-I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"video_id\": \"jbnddQ9l0IA\",\n    \"text\": \"oh yeeeee\",\n    \"likes\": 2,\n    \"dislikes\": 2,\n    \"user_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
 								""
 							]
 						}
